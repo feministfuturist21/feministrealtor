@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary: Deep Crimson - Power, passion, femininity */
+    --primary: 0 60% 40%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Secondary: Champagne Gold - Luxury, sovereignty */
+    --secondary: 38 55% 50%;
+    --secondary-foreground: 38 45% 15%;
+
+    /* Accent: Rich Gold - Crown, key symbolism */
+    --accent: 38 65% 55%;
+    --accent-foreground: 38 45% 12%;
+
+    /* Background: Warm ivory */
+    --background: 40 40% 98%;
+    --foreground: 0 15% 15%;
+
+    /* Card: Soft white with warmth */
+    --card: 40 45% 99%;
+    --card-foreground: 0 15% 15%;
+
+    --popover: 40 45% 99%;
+    --popover-foreground: 0 15% 15%;
+
+    /* Muted: Warm gray */
+    --muted: 40 15% 92%;
+    --muted-foreground: 0 10% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 25% 88%;
+    --input: 40 25% 88%;
+    --ring: 0 60% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --crimson: 0 60% 40%;
+    --crimson-light: 0 55% 55%;
+    --crimson-dark: 0 65% 30%;
+    --gold: 38 65% 55%;
+    --gold-light: 38 50% 75%;
+    --gold-dark: 38 70% 40%;
+    --ivory: 40 40% 98%;
+    --ivory-dark: 40 30% 92%;
+    --charcoal: 0 10% 20%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 40% 98%) 0%, hsl(38 50% 97%) 50%, hsl(40 40% 98%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(40 45% 99%) 0%, hsl(40 35% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 65% 55%) 0%, hsl(38 70% 45%) 100%);
+    --gradient-crimson: linear-gradient(135deg, hsl(0 60% 40%) 0%, hsl(0 65% 32%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(0 15% 15% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(0 15% 15% / 0.1);
+    --shadow-elevated: 0 16px 48px -12px hsl(0 15% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(38 65% 55% / 0.35);
+    --shadow-crimson: 0 0 40px hsl(0 60% 40% / 0.25);
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Sidebar tokens (kept for shadcn defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --primary: 0 55% 55%;
+    --primary-foreground: 0 50% 10%;
+
+    --secondary: 38 50% 45%;
+    --secondary-foreground: 38 45% 95%;
+
+    --accent: 38 60% 50%;
+    --accent-foreground: 38 45% 95%;
+
+    --background: 0 10% 8%;
+    --foreground: 40 25% 95%;
+
+    --card: 0 8% 12%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 0 8% 12%;
+    --popover-foreground: 40 25% 95%;
+
+    --muted: 0 10% 18%;
+    --muted-foreground: 0 8% 60%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 10% 20%;
+    --input: 0 10% 20%;
+    --ring: 0 55% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(38 70% 45%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-crimson {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(0 55% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+  }
+
+  .btn-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-crimson-glow {
+    box-shadow: var(--shadow-crimson);
+  }
+
+  /* Simple button primitives that match the Lovable vibe */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 font-medium text-primary-foreground;
+    background: var(--gradient-crimson);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 font-medium text-secondary-foreground;
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-secondary:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-1px);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}

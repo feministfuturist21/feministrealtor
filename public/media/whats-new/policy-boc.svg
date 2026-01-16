@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#fff9f2"/>
+  <circle cx="220" cy="160" r="190" fill="#f5e2b8" opacity="0.65"/>
+  <circle cx="1000" cy="560" r="220" fill="#f3d1d1" opacity="0.55"/>
+  <text x="80" y="150" font-family="Georgia, serif" font-size="56" fill="#5a1e1e">Policy Watch</text>
+  <text x="80" y="220" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" fill="#3b2a2a">Rates • Mortgages • What it means for you</text>
+  <rect x="80" y="270" width="520" height="10" fill="#c58b2b" opacity="0.75"/>
+</svg>

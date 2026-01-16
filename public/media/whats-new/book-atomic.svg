@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#fff6f7"/>
+  <circle cx="980" cy="520" r="220" fill="#f5e2b8" opacity="0.6"/>
+  <circle cx="240" cy="140" r="190" fill="#f3d1d1" opacity="0.55"/>
+  <text x="80" y="150" font-family="Georgia, serif" font-size="56" fill="#5a1e1e">Book Note</text>
+  <text x="80" y="220" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" fill="#3b2a2a">Atomic Habits • Decision consistency</text>
+  <rect x="80" y="270" width="610" height="10" fill="#a12b2b" opacity="0.65"/>
+</svg>
